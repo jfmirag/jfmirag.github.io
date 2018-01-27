@@ -1,0 +1,11 @@
+name: "Mi sitio web"
+navbar:
+  title: "Mi sitio web"
+  left:
+    - text: "Inicio"
+      href: index.html
+    - text: "Profesion"
+      href: about.html
+output:
+  html_document:
+    theme: cosmo

@@ -1,0 +1,43 @@
+---
+title: "PROFESION"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## ESTADISTICA
+
+
+```{r cars, echo=FALSE}
+
+plot(cars,main="Velocidad vs Distancia",xlab="Velocidad",ylab="Distancia",col="blue")
+regresion <- lm(cars$dist ~ cars$speed, data = cars)
+abline(regresion,col="red")
+par(mfrow=c(1,2))
+hist(cars$speed,xlab = "Velocidad",ylab = "Frecuencia",main = "Histigrama de velocidad",col = "green")
+hist(cars$dist,xlab = "Distancia",ylab = "Frecuencia",main = "Histigrama de distancia",col = "yellow")
+
+```
+
+
+###### Los anteriores graficos fueron realizados con la base de datos cars de r  
+
+
+
+
+```{r pressure, results='asis', echo=FALSE}
+d <- subset (pressure, temperature!=0)
+regresion2 <- lm(pressure ~ temperature + I(temperature^2), data = d)
+#summary(regresion2)
+plot(pressure,xlab="temperatura",ylab="presion",main="Temperatura vs Presion",col="red")
+library(ggplot2)
+qplot(temperature, pressure, data=d, geom=c("point", "smooth"), method="lm", formula= y ~ poly(x, 2),main ="Ajuste modelo cuadratico",xlab = "Temperatura",ylab = "Presion")
+
+```
+  
+  
+###### Los anteriores graficos fueron realizados con la base de datos pressure de r
+
+
