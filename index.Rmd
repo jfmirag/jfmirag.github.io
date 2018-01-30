@@ -1,8 +1,10 @@
 ---
-title: "Johan"
+title: "Johan Mira"
 ---
 
-![Imagen](C:/Users/LAURA/Downloads/ini1.jpg)
+![Tallarin](IMG.jpg)
+
+![](ini1.jpg)
 
 ###### Imagen tomada de https://wall.alphacoders.com/big.php?i=865109
 

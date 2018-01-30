@@ -3,10 +3,13 @@ navbar:
   title: "Mi sitio web"
   left:
     - text: "Inicio"
+      icon: fa-home
       href: index.html
     - text: "Profesion"
+      icon: fa fa-bar-chart
       href: about.html
 output:
   html_document:
     theme: cosmo
+    highlight: textmate
 output_dir: "."
