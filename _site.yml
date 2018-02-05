@@ -12,4 +12,7 @@ output:
   html_document:
     theme: cosmo
     highlight: textmate
+    includes:
+      after_body: footer.html
+      in_header: header.html
 output_dir: "."
