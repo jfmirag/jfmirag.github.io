@@ -2,7 +2,7 @@
 title: "PROFESION"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE,warning=FALSE,message=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -10,15 +10,18 @@ knitr::opts_chunk$set(echo = FALSE)
 ## ESTADISTICA
 
 
-```{r cars, echo=FALSE}
-
+```{r cars, echo=FALSE,warning=FALSE,message=FALSE}
+library(plotly)
 plot(cars,main="Velocidad vs Distancia",xlab="Velocidad",ylab="Distancia",col="blue")
 regresion <- lm(cars$dist ~ cars$speed, data = cars)
 abline(regresion,col="red")
-par(mfrow=c(1,2))
-hist(cars$speed,xlab = "Velocidad",ylab = "Frecuencia",main = "Histigrama de velocidad",col = "green")
-hist(cars$dist,xlab = "Distancia",ylab = "Frecuencia",main = "Histigrama de distancia",col = "yellow")
-
+#par(mfrow=c(1,2))
+#hist(cars$speed,xlab = "Velocidad",ylab = "Frecuencia",main = "Histigrama de velocidad",col = "green")
+#hist(cars$dist,xlab = "Distancia",ylab = "Frecuencia",main = "Histigrama de distancia",col = "yellow")
+plot_ly(data = cars,x=cars$speed,y=cars$dist,type = "scatter")
+p1 <- plot_ly(x = cars$speed, type = "histogram")
+p2 <- plot_ly(x = cars$speed, type = "histogram")
+subplot(p1, p2)
 ```
 
 
@@ -27,7 +30,7 @@ hist(cars$dist,xlab = "Distancia",ylab = "Frecuencia",main = "Histigrama de dist
 
 
 
-```{r pressure, results='asis', echo=FALSE}
+```{r pressure, results='asis', echo=FALSE,warning=FALSE,message=FALSE}
 d <- subset (pressure, temperature!=0)
 regresion2 <- lm(pressure ~ temperature + I(temperature^2), data = d)
 #summary(regresion2)
