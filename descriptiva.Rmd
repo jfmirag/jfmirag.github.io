@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(psych)
 ```
 
-###   Base de tas iris de R
+###   Base de datos iris de R
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 datos1=iris
@@ -26,7 +26,5 @@ hist(datos1$Ancho.de.Petalo,main = "Histograma del ancho del petalo")
 
 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+
 

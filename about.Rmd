@@ -9,17 +9,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## ESTADISTICA
 
-### imagen de estadistica
+![](estadistica.jpg)
 
 [Estadistica descriptiva](descriptiva.html)
 
 ```{r cars, echo=FALSE,warning=FALSE,message=FALSE}
 
 ```
-
-
-###### Los anteriores graficos fueron realizados con la base de datos cars de r  
-
 
 
 
@@ -29,6 +25,3 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
   
   
-###### Los anteriores graficos fueron realizados con la base de datos pressure de r
-
-
