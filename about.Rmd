@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## ESTADISTICA
 
-![](estadistica.jpg)
+![](estadistica.jpg "http://cerasis.com/2014/07/16/manufacturing-metrics/")
 
 [Estadistica descriptiva](descriptiva.html)
 
