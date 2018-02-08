@@ -1,0 +1,32 @@
+---
+title: "ESTADISTICA DESCRIPTIVA"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(psych)
+```
+
+###   Base de tas iris de R
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+datos1=iris
+colnames(datos1)<- c('Largo.de.Sepalo', 'Ancho.de.Sepalo', 'Largo.de.Petalo',
+                 'Ancho.de.Petalo', 'Especie')
+knitr::kable(head(datos1, 20))
+knitr::kable(summary(datos1))
+#describe(datos1)
+
+par(mfrow=c(2,2))
+hist(datos1$Largo.de.Sepalo,main = "Histograma del largo del sepalo")
+hist(datos1$Ancho.de.Sepalo,main = "Histograma del ancho del sepalo")
+hist(datos1$Largo.de.Petalo,main = "Histograma del largo del petalo")
+hist(datos1$Ancho.de.Petalo,main = "Histograma del ancho del petalo")
+```
+
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
