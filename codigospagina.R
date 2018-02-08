@@ -40,6 +40,10 @@ add_lines(y = ~regresion)
 
 
 ##################lo de antes
+- text: "Inicio"
+icon: fa-home
+href: index.html
+
 
 library(plotly)
 plot(cars,main="Velocidad vs Distancia",xlab="Velocidad",ylab="Distancia",col="blue")
