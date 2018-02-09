@@ -11,7 +11,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](estadistica.jpg "http://cerasis.com/2014/07/16/manufacturing-metrics/")
 
-<https://www.youtube.com/watch?time_continue=446&v=lJT4-OmnPPY>
+[](https://www.youtube.com/watch?v=ufHZUJGYzx8)
+
+<https://www.youtube.com/watch?v=ufHZUJGYzx8>
+
+<iframe width="300" height="200" src="https://www.youtube.com/watch?v=ufHZUJGYzx8" frameborder="0" allowfullscreen=""></iframe>
+
+<p><iframe width="300" height="200" src="https://www.youtube.com/watch?v=ufHZUJGYzx8" frameborder="0" allowfullscreen=""></iframe></p>
 
 [Estadistica descriptiva](descriptiva.html)
 
