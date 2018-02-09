@@ -64,3 +64,17 @@ regresion2 <- lm(pressure ~ temperature + I(temperature^2), data = d)
 plot(pressure,xlab="temperatura",ylab="presion",main="Temperatura vs Presion",col="red")
 library(ggplot2)
 qplot(temperature, pressure, data=d, geom=c("point", "smooth"), method="lm", formula= y ~ poly(x, 2),main ="Ajuste modelo cuadratico",xlab = "Temperatura",ylab = "Presion")
+
+
+
+
+
+
+
+
+
+######################video html
+
+#<iframe width="300" height="200" src="https://www.youtube.com/watch?v=ZWAn3CHd8Hc" frameborder="0" allowfullscreen=""></iframe>
+  
+#<p><iframe width="300" height="200" src="https://www.youtube.com/watch?v=ZWAn3CHd8Hc" frameborder="0" allowfullscreen=""></iframe></p>
