@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](estadistica.jpg "http://cerasis.com/2014/07/16/manufacturing-metrics/")
 
+<https://www.youtube.com/watch?time_continue=446&v=lJT4-OmnPPY>
+
 [Estadistica descriptiva](descriptiva.html)
 
 ```{r cars, echo=FALSE,warning=FALSE,message=FALSE}
