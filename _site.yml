@@ -5,6 +5,9 @@ navbar:
     - text: "Profesion"
       icon: fa fa-bar-chart
       href: about.html
+  right:
+    - icon: fa-github
+      href: https://github.com/jfmirag/jfmirag.github.io
 output:
   html_document:
     theme: cosmo
