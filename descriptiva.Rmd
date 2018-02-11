@@ -5,6 +5,7 @@ title: "ESTADISTICA DESCRIPTIVA"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(psych)
+library(plotly)
 ```
 
 ###   Base de datos iris de R
@@ -22,6 +23,16 @@ hist(datos1$Largo.de.Sepalo,main = "Histograma del largo del sepalo")
 hist(datos1$Ancho.de.Sepalo,main = "Histograma del ancho del sepalo")
 hist(datos1$Largo.de.Petalo,main = "Histograma del largo del petalo")
 hist(datos1$Ancho.de.Petalo,main = "Histograma del ancho del petalo")
+
+boxplot(datos1$Largo.de.Sepalo~datos1$Especie,main = "Largo del sepalo")
+boxplot(datos1$Ancho.de.Sepalo~datos1$Especie,main = "Ancho del sepalo")
+boxplot(datos1$Largo.de.Petalo~datos1$Especie,main = "Largo del petalo")
+boxplot(datos1$Ancho.de.Petalo~datos1$Especie,main = "Ancho del petalo")
+
+plot_ly(data = datos1, x = ~Largo.de.Sepalo, y = ~Largo.de.Petalo, color = ~Especie)
+plot_ly(data = datos1, x = ~Largo.de.Sepalo, y = ~Ancho.de.Sepalo, color = ~Especie)
+plot_ly(data = datos1, x = ~Largo.de.Petalo, y = ~Ancho.de.Petalo, color = ~Especie)
+
 ```
 
 
