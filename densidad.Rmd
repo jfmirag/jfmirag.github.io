@@ -1,0 +1,47 @@
+---
+title: "DENSIDAD"
+author: "jfmirag"
+date: "20 de febrero de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+cars
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Ejemplos
+
+Los datos con los que se trabaja en los primeros dos ejemplos se presentan a continuacion:
+
+```{r}
+knitr::kable(cars)
+```
+
+## Ejemplo 1 (Datos cuantitativos discretos)
+
+Para este ejemplo se toma la variable speed
+
+
+El grafico mas sencillo de densidad puede ser construido con las funciones `plot()` y `density()`, el resultado es el siguiente.
+
+```{r}
+plot(density(cars$speed))
+```
+```{r}
+hist(cars$speed, freq = FALSE, breaks = "FD",xlim = c(0,35))
+lines(density(cars$speed))
+```
+## Ejemplo 2 (Datos cuantitativos continuos)
+
+Para este ejemplo se toma la variable dist
+
+```{r}
+hist(cars$dist, freq = FALSE, breaks = "FD")
+lines(density(cars$dist))
+
+```
+## Ejemplo 3 
+
+```{r pressure, echo=FALSE}
+pressure
+```

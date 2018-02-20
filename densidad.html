@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="jfmirag" />
+
+
+<title>DENSIDAD</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113315486-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-113315486-1');
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mi sitio web</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">
+    <span class="fa fa fa fa-bar-chart"></span>
+     
+    Profesion
+  </a>
+</li>
+<li>
+  <a href="densidad.html">
+    <span class="fa fa fa fa-bar-chart"></span>
+     
+    Densidad
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/jfmirag/jfmirag.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">DENSIDAD</h1>
+<h4 class="author"><em>jfmirag</em></h4>
+<h4 class="date"><em>20 de febrero de 2018</em></h4>
+
+</div>
+
+
+<div id="ejemplos" class="section level1">
+<h1>Ejemplos</h1>
+<p>Los datos con los que se trabaja en los primeros dos ejemplos se presentan a continuacion:</p>
+<pre class="r"><code>knitr::kable(cars)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">speed</th>
+<th align="right">dist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">7</td>
+<td align="right">22</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="right">16</td>
+</tr>
+<tr class="even">
+<td align="right">9</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">34</td>
+</tr>
+<tr class="even">
+<td align="right">11</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">24</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="right">13</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">34</td>
+</tr>
+<tr class="even">
+<td align="right">13</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">46</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="right">14</td>
+<td align="right">36</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="right">14</td>
+<td align="right">80</td>
+</tr>
+<tr class="even">
+<td align="right">15</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">26</td>
+</tr>
+<tr class="even">
+<td align="right">15</td>
+<td align="right">54</td>
+</tr>
+<tr class="odd">
+<td align="right">16</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">17</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">42</td>
+</tr>
+<tr class="odd">
+<td align="right">18</td>
+<td align="right">56</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">76</td>
+</tr>
+<tr class="odd">
+<td align="right">18</td>
+<td align="right">84</td>
+</tr>
+<tr class="even">
+<td align="right">19</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">46</td>
+</tr>
+<tr class="even">
+<td align="right">19</td>
+<td align="right">68</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">48</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">56</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">64</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">66</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="right">54</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">70</td>
+</tr>
+<tr class="odd">
+<td align="right">24</td>
+<td align="right">92</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">93</td>
+</tr>
+<tr class="odd">
+<td align="right">24</td>
+<td align="right">120</td>
+</tr>
+<tr class="even">
+<td align="right">25</td>
+<td align="right">85</td>
+</tr>
+</tbody>
+</table>
+<div id="ejemplo-1-datos-cuantitativos-discretos" class="section level2">
+<h2>Ejemplo 1 (Datos cuantitativos discretos)</h2>
+<p>Para este ejemplo se toma la variable speed</p>
+<p>El grafico mas sencillo de densidad puede ser construido con las funciones <code>plot()</code> y <code>density()</code>, el resultado es el siguiente.</p>
+<pre class="r"><code>plot(density(cars$speed))</code></pre>
+<p><img src="densidad_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>hist(cars$speed, freq = FALSE, breaks = &quot;FD&quot;,xlim = c(0,35))
+lines(density(cars$speed))</code></pre>
+<p><img src="densidad_files/figure-html/unnamed-chunk-3-1.png" width="672" /> ## Ejemplo 2 (Datos cuantitativos continuos)</p>
+<p>Para este ejemplo se toma la variable dist</p>
+<pre class="r"><code>hist(cars$dist, freq = FALSE, breaks = &quot;FD&quot;)
+lines(density(cars$dist))</code></pre>
+<p><img src="densidad_files/figure-html/unnamed-chunk-4-1.png" width="672" /> ## Ejemplo 3</p>
+<pre><code>##    temperature pressure
+## 1            0   0.0002
+## 2           20   0.0012
+## 3           40   0.0060
+## 4           60   0.0300
+## 5           80   0.0900
+## 6          100   0.2700
+## 7          120   0.7500
+## 8          140   1.8500
+## 9          160   4.2000
+## 10         180   8.8000
+## 11         200  17.3000
+## 12         220  32.1000
+## 13         240  57.0000
+## 14         260  96.0000
+## 15         280 157.0000
+## 16         300 247.0000
+## 17         320 376.0000
+## 18         340 558.0000
+## 19         360 806.0000</code></pre>
+</div>
+</div>
+
+<br>
+<hr>
+<p><center>Copyright &copy; 2018, webpage made with Rmarkdown.</center></p>
+<hr>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
