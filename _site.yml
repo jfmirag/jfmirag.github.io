@@ -6,7 +6,7 @@ navbar:
       icon: fa fa-bar-chart
       href: about.html
     - text: "Densidad"
-      icon: fa fa-bar-chart
+      icon: fal fa-chart-area
       href: densidad.html
   right:
     - icon: fa-github

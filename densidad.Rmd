@@ -1,9 +1,9 @@
 ---
 title: "DENSIDAD"
-author: "jfmirag"
-date: "20 de febrero de 2018"
 output: html_document
 ---
+
+a continuacion se precentan ejemplos que pueden servir de guia a la hora de realizar un grafico de dencidad en R
 
 ```{r setup, include=FALSE}
 cars
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 # Ejemplos
 
-Los datos con los que se trabaja en los primeros dos ejemplos se presentan a continuacion:
+Los datos con los que se trabaja en los ejemplos se presentan a continuacion:
 
 ```{r}
 knitr::kable(cars)
@@ -27,21 +27,28 @@ El grafico mas sencillo de densidad puede ser construido con las funciones `plot
 ```{r}
 plot(density(cars$speed))
 ```
+otra opcion es la siguiente
+
 ```{r}
-hist(cars$speed, freq = FALSE, breaks = "FD",xlim = c(0,35))
+hist(cars$speed, freq = FALSE)
 lines(density(cars$speed))
 ```
 ## Ejemplo 2 (Datos cuantitativos continuos)
 
-Para este ejemplo se toma la variable dist
+Para este ejemplo se toma la variable dist y se sigue el mismo prosedimiento del ejemplo anterior.
 
 ```{r}
-hist(cars$dist, freq = FALSE, breaks = "FD")
+plot(density(cars$dist))
+hist(cars$dist, freq = FALSE)
 lines(density(cars$dist))
 
 ```
 ## Ejemplo 3 
 
-```{r pressure, echo=FALSE}
-pressure
+En este ejemplo se presenta un gafico de la variable speed pero esta vez modificando los parametros de las funciones `plot()`, `lines()` y `hist()`.
+
+```{r pressure, echo=TRUE}
+plot(density(cars$dist), main = "Densidad speed base de datos cars", ylab = "Densidad", xlab = "Speed", col=10)
+hist(cars$dist, freq = FALSE, main = "Densidad speed base de datos cars", ylab = "Densidad", xlab = "Speed", col="509")
+lines(density(cars$dist), col="red")
 ```
