@@ -12,7 +12,7 @@ navbar:
       href: https://github.com/jfmirag/jfmirag.github.io
 output:
   html_document:
-    theme: cosmo
+    theme: cerulean
     highlight: textmate
     includes:
       after_body: footer.html

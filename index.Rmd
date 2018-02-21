@@ -1,10 +1,11 @@
 ---
-title: "Johan Mira"
+title: "<center>**Johan Mira**</center>"
 ---
+<center>
+<img src="IMG1.jpeg" WIDTH=200 HEIGHT=200 ALT="tallarin y yo" title="tallarin y yo">
+</center> 
 
-![](IMG1.jpeg)
-
-Como lo dice mas arriba mi nombre es Jona Mira, me encuentro terminando mis estudios en estadistica en la Univercidad Nacional. Vivo en medellin, mi deporte favorito es la natacion, me gusta casi todo tipo de musica y todos los perros. 
+Como lo dice mas arriba mi nombre es **Jona Mira**, me encuentro terminando mis estudios en **estadistica** en la Univercidad Nacional. Vivo en medellin, mi deporte favorito es la natacion, me gusta casi todo tipo de musica y todos los perros. 
 
 
 
