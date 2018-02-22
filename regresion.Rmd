@@ -12,15 +12,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r echo=FALSE}
 regresion=read.table("regresion.csv",header = TRUE, sep = ";")
 summary(regresion)
-plot(regresion$area,regresion$valor)
+plot(regresion$area,regresion$valor,main = "Area vs Valor",ylab = "Valor",xlab = "Area")
 cor(regresion)
 mod1=lm(valor~area,data=regresion)
 summary(mod1)
-plot(regresion$area,regresion$valor)
+plot(regresion$area,regresion$valor,main = "Grafico con recta de regresion",ylab = "Valor",xlab = "Area")
 abline(mod1)
 est=data.frame(area = seq(1, 350,by=7))
 estimaciones=predict(mod1, est)
-
+estimaciones
 ```
 
 
