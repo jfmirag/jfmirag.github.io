@@ -3,9 +3,10 @@ navbar:
   title: "Mi sitio web"
   left:
     - text: "Profesion"
-      icon: fa fa-bar-chart
+      icon: fas fa-laptop
       href: about.html
     - text: "Densidad"
+      icon: fa fa-bar-chart
       href: densidad.html
   right:
     - icon: fa-github
