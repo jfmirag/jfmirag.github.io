@@ -14,17 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 <https://www.youtube.com/watch?v=ufHZUJGYzx8>  
 
 
-[Estadistica descriptiva](descriptiva.html)
+- [Estadistica descriptiva](descriptiva.html)
 
-```{r cars, echo=FALSE,warning=FALSE,message=FALSE}
+- [Regresion](regresion.html)
 
-```
-
-
-
-```{r pressure, results='asis', echo=FALSE,warning=FALSE,message=FALSE}
-
-
-```
-  
-  

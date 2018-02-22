@@ -11,7 +11,7 @@
 
 
 
-<title>PROFESION</title>
+<title>REGRESION</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -211,22 +211,42 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">PROFESION</h1>
+<h1 class="title toc-ignore">REGRESION</h1>
 
 </div>
 
 
-<div id="estadistica" class="section level2">
-<h2>ESTADISTICA</h2>
-<div class="figure">
-<img src="estadistica.jpg" title="http://cerasis.com/2014/07/16/manufacturing-metrics/" />
-
-</div>
-<p><a href="https://www.youtube.com/watch?v=ufHZUJGYzx8" class="uri">https://www.youtube.com/watch?v=ufHZUJGYzx8</a></p>
-<ul>
-<li><p><a href="descriptiva.html">Estadistica descriptiva</a></p></li>
-<li><p><a href="regresion.html">Regresion</a></p></li>
-</ul>
+<div id="regresion-lineal-simple" class="section level2">
+<h2>Regresion lineal simple</h2>
+<pre><code>##      valor                area      
+##  Min.   :1.300e+08   Min.   : 49.0  
+##  1st Qu.:3.350e+08   1st Qu.:100.0  
+##  Median :4.350e+08   Median :138.0  
+##  Mean   :4.855e+08   Mean   :150.5  
+##  3rd Qu.:5.500e+08   3rd Qu.:190.0  
+##  Max.   :1.630e+09   Max.   :350.0</code></pre>
+<pre><code>##           valor      area
+## valor 1.0000000 0.8599923
+## area  0.8599923 1.0000000</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = valor ~ area, data = regresion)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -397309920  -69525715   11622185   63152268  618679323 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -26807060   33644921  -0.797    0.427    
+## area          3403698     202988  16.768   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 141600000 on 99 degrees of freedom
+## Multiple R-squared:  0.7396, Adjusted R-squared:  0.737 
+## F-statistic: 281.2 on 1 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><img src="regresion_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 
 <br>

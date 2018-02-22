@@ -1,0 +1,26 @@
+---
+title: "REGRESION"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Regresion lineal simple
+
+```{r echo=FALSE}
+regresion=read.table("regresion.csv",header = TRUE, sep = ";")
+summary(regresion)
+plot(regresion$area,regresion$valor)
+cor(regresion)
+mod1=lm(valor~area,data=regresion)
+summary(mod1)
+plot(regresion$area,regresion$valor)
+abline(mod1)
+est=data.frame(area = seq(1, 350,by=7))
+estimaciones=predict(mod1, est)
+
+```
+
+
