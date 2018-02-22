@@ -1,5 +1,5 @@
 ---
-title: "REGRESION"
+title: "**REGRESION**"
 output: html_document
 ---
 
@@ -9,18 +9,73 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Regresion lineal simple
 
+Para ilustrar este caso se usara una base de datos de apartamentos en el Poblado-Medellin.
+
+En un principio veamos un resumen de la base de datos.
+
 ```{r echo=FALSE}
 regresion=read.table("regresion.csv",header = TRUE, sep = ";")
-summary(regresion)
+knitr::kable(summary(regresion))
 plot(regresion$area,regresion$valor,main = "Area vs Valor",ylab = "Valor",xlab = "Area")
-cor(regresion)
+```
+
+**correlacion**
+
+```{r echo=FALSE}
+knitr::kable(cor(regresion))
+```
+
+A continuacion se muestran los resultados del ajuste del modelo lineal simple.
+
+```{r echo=FALSE}
 mod1=lm(valor~area,data=regresion)
 summary(mod1)
 plot(regresion$area,regresion$valor,main = "Grafico con recta de regresion",ylab = "Valor",xlab = "Area")
 abline(mod1)
+```
+
+Ahora se veran los resultados obtenidos para valores predichos
+
+```{r echo=FALSE}
 est=data.frame(area = seq(1, 350,by=7))
 estimaciones=predict(mod1, est)
-estimaciones
+
+nuevo=data.frame(est,estimaciones)
+knitr::kable(nuevo)
+```
+Los intervalos de confianza para este modelo se muestran a continuacion
+
+```{r echo=FALSE}
+knitr::kable(confint(mod1, level = 0.95))
+
+plot(regresion$area,regresion$valor,main = "Grafico con recta de regresion",ylab = "Valor",xlab = "Area")
+abline(mod1)
+# Intervalos de confianza 
+ic <- predict(mod1, est, interval = "confidence")
+lines(est$area, ic[, 2], lty = 2)
+lines(est$area, ic[, 3], lty = 2)
+# Intervalos de prediccion
+ic <- predict(mod1, est, interval = "prediction")
+lines(est$area, ic[, 2], lty = 2, col = "red")
+lines(est$area, ic[, 3], lty = 2, col = "red")
+```
+### ANOVA
+
+```{r echo=FALSE}
+knitr::kable(anova(mod1))
+```
+
+### Dignostico del modelo
+
+```{r echo=FALSE}
+residuos = rstandard(mod1)
+valajust = fitted(mod1)
+plot(valajust, residuos)
+abline(h=-2,col="red")
+abline(h=2,col="red")
+qqnorm(residuos)
+qqline(residuos)
+
 ```
 
 

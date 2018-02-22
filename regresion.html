@@ -186,13 +186,17 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="about.html">
-    <span class="fa fa fa fa-bar-chart"></span>
+    <span class="fas fa fas fa-laptop"></span>
      
     Profesion
   </a>
 </li>
 <li>
-  <a href="densidad.html">Densidad</a>
+  <a href="densidad.html">
+    <span class="fa fa fa fa-bar-chart"></span>
+     
+    Densidad
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -211,24 +215,80 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">REGRESION</h1>
+<h1 class="title toc-ignore"><strong>REGRESION</strong></h1>
 
 </div>
 
 
 <div id="regresion-lineal-simple" class="section level2">
 <h2>Regresion lineal simple</h2>
-<pre><code>##      valor                area      
-##  Min.   :1.300e+08   Min.   : 49.0  
-##  1st Qu.:3.350e+08   1st Qu.:100.0  
-##  Median :4.350e+08   Median :138.0  
-##  Mean   :4.855e+08   Mean   :150.5  
-##  3rd Qu.:5.500e+08   3rd Qu.:190.0  
-##  Max.   :1.630e+09   Max.   :350.0</code></pre>
+<p>Para ilustrar este caso se usara una base de datos de apartamentos en el Poblado-Medellin.</p>
+<p>En un principio veamos un resumen de la base de datos.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">valor</th>
+<th align="center">area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="center">Min. :1.300e+08</td>
+<td align="center">Min. : 49.0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">1st Qu.:3.350e+08</td>
+<td align="center">1st Qu.:100.0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="center">Median :4.350e+08</td>
+<td align="center">Median :138.0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Mean :4.855e+08</td>
+<td align="center">Mean :150.5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="center">3rd Qu.:5.500e+08</td>
+<td align="center">3rd Qu.:190.0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Max. :1.630e+09</td>
+<td align="center">Max. :350.0</td>
+</tr>
+</tbody>
+</table>
 <p><img src="regresion_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre><code>##           valor      area
-## valor 1.0000000 0.8599923
-## area  0.8599923 1.0000000</code></pre>
+<p><strong>correlacion</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">valor</th>
+<th align="right">area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>valor</td>
+<td align="right">1.0000000</td>
+<td align="right">0.8599923</td>
+</tr>
+<tr class="even">
+<td>area</td>
+<td align="right">0.8599923</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+<p>A continuacion se muestran los resultados del ajuste del modelo lineal simple.</p>
 <pre><code>## 
 ## Call:
 ## lm(formula = valor ~ area, data = regresion)
@@ -247,27 +307,278 @@ $(document).ready(function () {
 ## Residual standard error: 141600000 on 99 degrees of freedom
 ## Multiple R-squared:  0.7396, Adjusted R-squared:  0.737 
 ## F-statistic: 281.2 on 1 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
-<p><img src="regresion_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<pre><code>##            1            2            3            4            5 
-##  -23403362.8     422519.7   24248402.2   48074284.7   71900167.2 
-##            6            7            8            9           10 
-##   95726049.7  119551932.2  143377814.7  167203697.2  191029579.7 
-##           11           12           13           14           15 
-##  214855462.2  238681344.7  262507227.2  286333109.7  310158992.2 
-##           16           17           18           19           20 
-##  333984874.7  357810757.2  381636639.7  405462522.2  429288404.7 
-##           21           22           23           24           25 
-##  453114287.2  476940169.7  500766052.2  524591934.7  548417817.2 
-##           26           27           28           29           30 
-##  572243699.7  596069582.2  619895464.7  643721347.2  667547229.7 
-##           31           32           33           34           35 
-##  691373112.2  715198994.6  739024877.1  762850759.6  786676642.1 
-##           36           37           38           39           40 
-##  810502524.6  834328407.1  858154289.6  881980172.1  905806054.6 
-##           41           42           43           44           45 
-##  929631937.1  953457819.6  977283702.1 1001109584.6 1024935467.1 
-##           46           47           48           49           50 
-## 1048761349.6 1072587232.1 1096413114.6 1120238997.1 1144064879.6</code></pre>
+<p><img src="regresion_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Ahora se veran los resultados obtenidos para valores predichos</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">area</th>
+<th align="right">estimaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">-23403362.8</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">422519.7</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">24248402.2</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">48074284.7</td>
+</tr>
+<tr class="odd">
+<td align="right">29</td>
+<td align="right">71900167.2</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="right">95726049.7</td>
+</tr>
+<tr class="odd">
+<td align="right">43</td>
+<td align="right">119551932.2</td>
+</tr>
+<tr class="even">
+<td align="right">50</td>
+<td align="right">143377814.7</td>
+</tr>
+<tr class="odd">
+<td align="right">57</td>
+<td align="right">167203697.2</td>
+</tr>
+<tr class="even">
+<td align="right">64</td>
+<td align="right">191029579.7</td>
+</tr>
+<tr class="odd">
+<td align="right">71</td>
+<td align="right">214855462.2</td>
+</tr>
+<tr class="even">
+<td align="right">78</td>
+<td align="right">238681344.7</td>
+</tr>
+<tr class="odd">
+<td align="right">85</td>
+<td align="right">262507227.2</td>
+</tr>
+<tr class="even">
+<td align="right">92</td>
+<td align="right">286333109.7</td>
+</tr>
+<tr class="odd">
+<td align="right">99</td>
+<td align="right">310158992.2</td>
+</tr>
+<tr class="even">
+<td align="right">106</td>
+<td align="right">333984874.7</td>
+</tr>
+<tr class="odd">
+<td align="right">113</td>
+<td align="right">357810757.2</td>
+</tr>
+<tr class="even">
+<td align="right">120</td>
+<td align="right">381636639.7</td>
+</tr>
+<tr class="odd">
+<td align="right">127</td>
+<td align="right">405462522.2</td>
+</tr>
+<tr class="even">
+<td align="right">134</td>
+<td align="right">429288404.7</td>
+</tr>
+<tr class="odd">
+<td align="right">141</td>
+<td align="right">453114287.2</td>
+</tr>
+<tr class="even">
+<td align="right">148</td>
+<td align="right">476940169.7</td>
+</tr>
+<tr class="odd">
+<td align="right">155</td>
+<td align="right">500766052.2</td>
+</tr>
+<tr class="even">
+<td align="right">162</td>
+<td align="right">524591934.7</td>
+</tr>
+<tr class="odd">
+<td align="right">169</td>
+<td align="right">548417817.2</td>
+</tr>
+<tr class="even">
+<td align="right">176</td>
+<td align="right">572243699.7</td>
+</tr>
+<tr class="odd">
+<td align="right">183</td>
+<td align="right">596069582.2</td>
+</tr>
+<tr class="even">
+<td align="right">190</td>
+<td align="right">619895464.7</td>
+</tr>
+<tr class="odd">
+<td align="right">197</td>
+<td align="right">643721347.2</td>
+</tr>
+<tr class="even">
+<td align="right">204</td>
+<td align="right">667547229.7</td>
+</tr>
+<tr class="odd">
+<td align="right">211</td>
+<td align="right">691373112.2</td>
+</tr>
+<tr class="even">
+<td align="right">218</td>
+<td align="right">715198994.6</td>
+</tr>
+<tr class="odd">
+<td align="right">225</td>
+<td align="right">739024877.1</td>
+</tr>
+<tr class="even">
+<td align="right">232</td>
+<td align="right">762850759.6</td>
+</tr>
+<tr class="odd">
+<td align="right">239</td>
+<td align="right">786676642.1</td>
+</tr>
+<tr class="even">
+<td align="right">246</td>
+<td align="right">810502524.6</td>
+</tr>
+<tr class="odd">
+<td align="right">253</td>
+<td align="right">834328407.1</td>
+</tr>
+<tr class="even">
+<td align="right">260</td>
+<td align="right">858154289.6</td>
+</tr>
+<tr class="odd">
+<td align="right">267</td>
+<td align="right">881980172.1</td>
+</tr>
+<tr class="even">
+<td align="right">274</td>
+<td align="right">905806054.6</td>
+</tr>
+<tr class="odd">
+<td align="right">281</td>
+<td align="right">929631937.1</td>
+</tr>
+<tr class="even">
+<td align="right">288</td>
+<td align="right">953457819.6</td>
+</tr>
+<tr class="odd">
+<td align="right">295</td>
+<td align="right">977283702.1</td>
+</tr>
+<tr class="even">
+<td align="right">302</td>
+<td align="right">1001109584.6</td>
+</tr>
+<tr class="odd">
+<td align="right">309</td>
+<td align="right">1024935467.1</td>
+</tr>
+<tr class="even">
+<td align="right">316</td>
+<td align="right">1048761349.6</td>
+</tr>
+<tr class="odd">
+<td align="right">323</td>
+<td align="right">1072587232.1</td>
+</tr>
+<tr class="even">
+<td align="right">330</td>
+<td align="right">1096413114.6</td>
+</tr>
+<tr class="odd">
+<td align="right">337</td>
+<td align="right">1120238997.1</td>
+</tr>
+<tr class="even">
+<td align="right">344</td>
+<td align="right">1144064879.6</td>
+</tr>
+<tr class="odd">
+<td align="right">Los int</td>
+<td align="right">ervalos de confianza para este modelo se muestran a continuacion</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">2.5 %</th>
+<th align="right">97.5 %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="right">-93565883</td>
+<td align="right">39951762</td>
+</tr>
+<tr class="even">
+<td>area</td>
+<td align="right">3000925</td>
+<td align="right">3806470</td>
+</tr>
+</tbody>
+</table>
+<p><img src="regresion_files/figure-html/unnamed-chunk-5-1.png" width="672" /> ### ANOVA</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Df</th>
+<th align="right">Sum Sq</th>
+<th align="right">Mean Sq</th>
+<th align="right">F value</th>
+<th align="right">Pr(&gt;F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>area</td>
+<td align="right">1</td>
+<td align="right">5.633806e+18</td>
+<td align="right">5.633806e+18</td>
+<td align="right">281.1649</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>Residuals</td>
+<td align="right">99</td>
+<td align="right">1.983700e+18</td>
+<td align="right">2.003737e+16</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<div id="dignostico-del-modelo" class="section level3">
+<h3>Dignostico del modelo</h3>
+<p><img src="regresion_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="regresion_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+</div>
 </div>
 
 <br>
