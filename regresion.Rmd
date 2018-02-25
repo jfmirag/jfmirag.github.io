@@ -7,9 +7,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Regresion lineal simple
+## Regresión lineal simple
 
-Para ilustrar este caso se usara una base de datos de apartamentos en el Poblado-Medellin.
+Para ilustrar este caso se usará una base de datos de apartamentos en el Poblado-Medellín.
 
 En un principio veamos un resumen de la base de datos.
 
@@ -19,13 +19,13 @@ knitr::kable(summary(regresion))
 plot(regresion$area,regresion$valor,main = "Area vs Valor",ylab = "Valor",xlab = "Area")
 ```
 
-**correlacion**
+**correlación**
 
 ```{r echo=FALSE}
 knitr::kable(cor(regresion))
 ```
 
-A continuacion se muestran los resultados del ajuste del modelo lineal simple.
+A continuación se muestran los resultados del ajuste del modelo lineal simple.
 
 ```{r echo=FALSE}
 mod1=lm(valor~area,data=regresion)
@@ -34,7 +34,7 @@ plot(regresion$area,regresion$valor,main = "Grafico con recta de regresion",ylab
 abline(mod1)
 ```
 
-Ahora se veran los resultados obtenidos para valores predichos
+Ahora se verán los resultados obtenidos para valores predichos
 
 ```{r echo=FALSE}
 est=data.frame(area = seq(1, 350,by=7))
@@ -43,7 +43,7 @@ estimaciones=predict(mod1, est)
 nuevo=data.frame(est,estimaciones)
 knitr::kable(nuevo)
 ```
-Los intervalos de confianza para este modelo se muestran a continuacion
+Los intervalos de confianza para este modelo se muestran a continuación
 
 ```{r echo=FALSE}
 knitr::kable(confint(mod1, level = 0.95))
@@ -65,7 +65,7 @@ lines(est$area, ic[, 3], lty = 2, col = "red")
 knitr::kable(anova(mod1))
 ```
 
-### Dignostico del modelo
+### Diagnostico del modelo
 
 ```{r echo=FALSE}
 residuos = rstandard(mod1)
