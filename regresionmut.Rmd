@@ -7,6 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(psych)
+library(plotly)
+library(ggplot2)
+library(gridExtra)
 ```
 
 ## Regresion multiple
@@ -15,5 +19,39 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 regresionmult=read.table("regresionmult.csv",header = TRUE, sep = ";")
+#pairs(regresionmult) 
+ 
+pairs.panels(regresionmult, pch=21,main="Gráfico 01.6: Matriz de Dispersión, Histograma y Correlación")
+plot_ly(data = regresionmult, x = ~area, y = ~valor, color = ~as.character(estrato))
+plot_ly(data = regresionmult, x = ~area, y = ~valor, color = ~as.character(bano))
+regmult=lm(valor~area+estrato+bano,data=regresionmult)
+regmult=lm(valor~area+as.character(estrato)+as.character(bano),data=regresionmult)
+summary(regmult)
+###residuales
+
+plot1 <- ggplot(data = regresionmult, aes(valor, regmult$residuals)) +
+    geom_point() + geom_smooth(color = "firebrick") + geom_hline(yintercept = 0) +
+    theme_bw()
+plot2 <- ggplot(data = regresionmult, aes(as.character(estrato), regmult$residuals)) +
+    geom_point() + geom_smooth(color = "firebrick") + geom_hline(yintercept = 0) +
+    theme_bw()
+plot3 <- ggplot(data = regresionmult, aes(as.character(bano), regmult$residuals)) +
+    geom_point() + geom_smooth(color = "firebrick") + geom_hline(yintercept = 0) +
+    theme_bw()
+plot4 <- ggplot(data = regresionmult, aes(area, regmult$residuals)) +
+    geom_point() + geom_smooth(color = "firebrick") + geom_hline(yintercept = 0) +
+    theme_bw()
+grid.arrange(plot1, plot2, plot3, plot4)
+
+qqnorm(regmult$residuals)
+qqline(regmult$residuals)
+
+shapiro.test(regmult$residuals)
+##residuales vs valores ajustados
+ggplot(data = regresionmult, aes(regmult$fitted.values, regmult$residuals)) +
+geom_point() +
+geom_smooth(color = "firebrick", se = FALSE) +
+geom_hline(yintercept = 0) +
+theme_bw()
 ```
 
