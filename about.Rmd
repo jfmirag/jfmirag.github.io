@@ -16,5 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - [Estadistica descriptiva](descriptiva.html)
 
-- [Regresion](regresion.html)
+- [Regresion lineal simple](regresion.html)
+
+- [Regresion lineal multiple](regresionmut.html)
 
