@@ -1,0 +1,19 @@
+---
+title: "Regresion multiple"
+author: "jfmirag"
+date: "5 de marzo de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Regresion multiple
+
+
+
+```{r}
+regresionmult=read.table("regresionmult.csv",header = TRUE, sep = ";")
+```
+
