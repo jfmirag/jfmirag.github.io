@@ -1,0 +1,39 @@
+---
+title: "Configuracion de cuenta shiny por primera vez"
+author: "Johan Mira"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Paso 1 - INSTALAR RSCONNECT
+
+El paquete `rsconnect` se puede instalar directamente desde CRAN. Para asegurarse de tener la última versión, ejecute el siguiente código en su consola R:
+
+```{r eval=FALSE}
+install.packages('rsconnect')
+```
+
+# Paso 2 AUTORIZAR CUENTA
+
+El paquete rsconnect debe estar autorizado en su cuenta mediante un token y un secreto. Para hacer esto, haga clic en el botón Copiar a continuación y copiaremos todo el comando que necesita en su portapapeles. Simplemente pégalo en tu consola para autorizar tu cuenta. Una vez que haya ingresado el comando exitosamente en R, esa computadora ahora está autorizada para implementar aplicaciones en su cuenta de shinyapps.io.
+
+```{r eval=FALSE}
+rsconnect::setAccountInfo(name='jfmirag',
+			  token='30E47BC446BDA83***************',
+			  secret='<SECRET>')
+```
+
+
+En el futuro, puede administrar sus tokens desde la página Tokens en el menú de configuración.
+			  
+# Paso 3 DESPLEGAR
+
+Una vez que se haya configurado el paquete rsconnect, ya está listo para implementar su primera aplicación. Si aún no ha escrito ninguna aplicación, puede consultar la Guía de inicio para obtener instrucciones sobre cómo implementar nuestra aplicación de demostración. Ejecute el siguiente código en su consola R.
+
+`library(rsconnect)
+rsconnect::deployApp('path/to/your/app')`
+
