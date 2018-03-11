@@ -5,9 +5,9 @@ navbar:
     - text: "Profesion"
       icon: fas fa-laptop
       href: about.html
-    - text: "Densidad"
-      icon: fa fa-bar-chart
-      href: densidad.html
+    - text: "Shiny"
+      icon: far fa-registered
+      href: shiny.html
   right:
     - icon: fa-github
       href: https://github.com/jfmirag/jfmirag.github.io

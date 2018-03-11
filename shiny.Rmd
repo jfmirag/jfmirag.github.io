@@ -1,0 +1,18 @@
+---
+title: "Shiny"
+runtime: shiny
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+A continuacion se presenta una aplicacion donde es posible observar el comportamiento de la distribucion Beta segun la media y la variaza.
+
+<center>
+```{r echo=FALSE}
+knitr::include_app("https://jfmirag.shinyapps.io/distbeta/")
+```
+</center>

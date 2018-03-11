@@ -14,6 +14,8 @@ knitr::opts_chunk$set(echo = FALSE)
 <https://www.youtube.com/watch?v=ufHZUJGYzx8>  
 
 
+- [Grafico de densidad](densidad.html)
+
 - [Estadistica descriptiva](descriptiva.html)
 
 - [Regresion lineal simple](regresion.html)
