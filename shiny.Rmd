@@ -11,6 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A continuacion se presenta una aplicacion donde es posible observar el comportamiento de la distribucion Beta segun la media y la variaza.
 
+
+- [Distribucion beta](distbeta.zip)
+
 <center>
 ```{r echo=FALSE}
 knitr::include_app("https://jfmirag.shinyapps.io/distbeta/")
