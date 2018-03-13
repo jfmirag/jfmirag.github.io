@@ -16,3 +16,8 @@ A continuacion se presenta una aplicacion donde es posible observar el comportam
 knitr::include_app("https://jfmirag.shinyapps.io/distbeta/")
 ```
 </center>
+
+
+# Otras app
+
+- [Distribucion beta](distbeta.zip)
